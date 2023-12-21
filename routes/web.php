@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/{pathMatch}', function () {
-    return view('welcome');
+Route::prefix('admin')->group(function(){
+    Route::get("/users", function(){
+        return view('app');
+    });
+    Route::get("/roles", function(){
+        return view('app');
+    });
+    Route::get("/settings", function(){
+        return view('app');
+    });
 });
